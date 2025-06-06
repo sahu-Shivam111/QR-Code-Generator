@@ -3,79 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <title>QR Code Generator</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+ <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    body {
-      background: #f0f4f8;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+  body {
+    background: #f0f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
 
+  .container {
+    background: white;
+    border: solid 4px skyblue;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  h1 {
+    margin-bottom: 16px;
+    font-size: 24px;
+    color: #333;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+    text-align: center;
+  }
+
+  input:focus {
+    border-color: #0077ff;
+  }
+
+  button {
+    background-color: #0274f6;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #005fd1;
+  }
+
+  #qrCode {
+    display: none;
+    margin: 24px auto 0;
+    border: 8px solid white;
+    border-radius: 12px;
+    background: white;
+  }
+
+  /* 👨‍💻 Tablet and Desktop Enhancements */
+  @media (min-width: 600px) {
     .container {
-      background: white;
-
-      border: solid 4px skyblue;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      width: 100vw;
+      padding: 32px;
       max-width: 400px;
     }
 
     h1 {
-      margin-bottom: 20px;
       font-size: 28px;
-      color: #333;
-    }
-
-    input {
-        text-align: center;
-      width: 100%;
-      padding: 12px 15px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      outline: none;
-      margin-bottom: 20px;
-      transition: border-color 0.3s;
-    }
-
-    input:focus {
-      border-color: #0077ff;
     }
 
     button {
-      background-color: #0274f6;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-  
+      width: auto;
     }
+  }
+</style>
 
-    button:hover {
-      background-color: #005fd1;
-    }
-
-    #qrCode {
-      display: none;
-  margin: 30px auto 0;
-  border: 8px solid white;
-  border-radius: 12px;
-  background: white;
-    }
-  </style>
 </head>
 <body>
 
